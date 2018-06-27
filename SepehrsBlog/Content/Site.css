@@ -1,0 +1,254 @@
+﻿/* Add vintage win95 font*/
+@font-face {
+    font-family:'win95font';
+    src:url('Fonts/win95font.ttf')
+	format('truetype');
+}
+
+*{
+    margin:0;
+}
+
+a {
+    color: white !important;
+}
+
+a:hover{
+    text-decoration: none !important;
+}
+
+:any-link{
+    text-decoration: none !important;
+    color: white !important;
+}
+
+:link{
+    text-decoration: none !important;
+    color: white !important;
+}
+
+:visited{
+    text-decoration: none !important;
+    color: white !important;
+}
+/* Auto padding and background color */
+body {
+    background-color: rgb(0,123,123) !important ;
+    padding-top: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+nav{
+    height: auto;
+    width: 30em;
+
+}
+
+.navcontainer{
+    margin: 20px;
+    margin-top: 3em;
+    margin-left:auto;
+    margin-right:auto;
+    padding: 0px;
+}
+
+/* Container for all posts */
+.msgcontainer{
+    cursor:default;
+    margin: 0px;
+    padding: 0px;
+    padding-top: 3em;
+    margin-bottom:3em;
+}
+
+/* Individual post container */
+.msg{
+    width:400px;
+    height:auto;
+    padding:0px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:1em;
+}
+
+/* Grey part */
+.msg-body {
+    
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+    background-color: rgb(189,189,189);
+    width: 100%;
+    height: auto;
+    min-height: 100px;
+    padding: 10px;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    border-left: 2px solid white;
+    padding-bottom: 8px;
+
+}
+
+/* Blue title part */
+.msg-title {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00007b+0,0084ce+100 */
+    
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    
+    background: #00007b; /* Old browsers */
+    background: -moz-linear-gradient(left, #00007b 0%, #0084ce 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #00007b 0%,#0084ce 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #00007b 0%,#0084ce 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00007b', endColorstr='#0084ce',GradientType=1 ); /* IE6-9 */
+
+    width: 100%;
+    height: 1.7em;
+    padding: 4px 4px 20px 4px;
+    
+    color: white !important;
+    border-right: 2px solid black;
+    border-left: 2px solid white;
+    border-top: 2px solid white;
+    font-weight: 700;
+}
+
+input[type=text]{
+    width: 180px;
+    margin-top:8px;
+    margin-bottom:8px;
+    background:white;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    border-left: 2px solid black;
+    border-top: 2px solid black;
+}
+
+input[type=password]{
+    width: 180px;
+    margin-top:8px;
+    margin-bottom:8px;
+    background:white;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    border-left: 2px solid black;
+    border-top: 2px solid black;
+}
+
+textarea.bigwindows{
+    float:left;
+    margin-top:8px;
+    margin-bottom:8px;
+    background:white;
+    width:100%;
+    height:auto;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    border-left: 2px solid black;
+    border-top: 2px solid black;
+    resize:vertical;
+}
+
+input.windowsbutton{
+    margin-top: 10px;
+    background:rgb(189,189,189);
+    padding:4px;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    border-left: 2px solid white;
+    border-top: 2px solid white;
+    cursor:pointer;
+}
+
+label.windowsLabel{
+    float:left;
+    margin-right: 5px;
+    margin-top: 10px;
+    display:inline-block;
+    width: 80px;
+    text-align:right;
+}
+
+img.icon{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 0px;
+}
+
+.activity-bar{ /*the activity bar at the bottom, used for navigation*/
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 100%;
+    background-color: rgb(189,189,189);
+    height: 28px;
+    padding: 3px 0 0 0;
+    margin: 0;
+    border-top: 2px solid white;
+    bottom:0;
+    position: fixed;
+    cursor:pointer;
+}
+
+a.navbarlink{ /*link for navbar on the left*/
+    text-decoration:underline !important;
+    font-weight:bold !important;
+    color: black !important;
+}
+
+a.navbarlink:hover{
+    color:white !important;
+}
+
+.validation-summary-errors {
+    width:auto;
+    margin:0;
+    padding:0;
+}
+
+span.validation-summary-errors {
+    margin:0;
+    padding:0;
+}
+
+
+.validation-summary-errors ul{
+    margin:0;
+    padding:0;
+    list-style-position: inside;
+}
+
+.validation-summary-errors li{
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+#errorBox{
+    display:none;
+}
+
+#startMenuButton{
+    width:54px;
+    height:22px;
+}
+
+.date {
+    font-size: 12px !important;
+    color:black !important;
+}

@@ -1,0 +1,21 @@
+﻿@model SepehrsBlog.Models.Post
+@{
+    ViewBag.Title = "Edit post";
+}
+
+
+@section navLinks
+{
+    <a href="@Url.Action("Index", "Home", Model)" class="navbarlink">Back to home</a><br />
+}
+
+@using (Html.BeginForm("SavePost", "Post"))
+{
+    @Html.LabelFor(x => x.Title, "Post title: ")
+    @Html.EditorFor(x => x.Title)
+    <br />
+    @Html.LabelFor(x => x.Content, "Post text: ")
+    @Html.EditorFor(x => x.Content)
+    <br />
+    <input type="submit" value="Save post" />
+}

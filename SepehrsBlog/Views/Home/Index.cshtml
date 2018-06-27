@@ -1,0 +1,29 @@
+﻿@model IEnumerable<SepehrsBlog.Models.Post>
+
+@{
+    ViewBag.Title = "Home";
+}
+
+@section navLinks
+{
+    <a href="@Url.Action("NewPost", "Post")" class="navbarlink">Add post</a><br />
+    <a href="@Url.Action("Logout", "User")" class="navbarlink">Log out</a>
+}
+
+
+@if (Model != null)
+{
+    foreach (var post in Model)
+    {
+        <div class="row">
+            <div class="msg">
+                <div class="msg-title"><img style="float:left; margin-right:5px" src="~/Content/Images/notepad.png" />@Html.ActionLink(post.Title, "Index", "Post", new { postId = post.PostId }, null)<img style="float:right" src="~/Content/Images/xmark.png" /><a style="float:right;margin-right:1em">@post.Date.ToString("yyyy-MM-dd")</a></div>
+                <div class="msg-body">@post.Content</div>
+            </div>
+        </div>
+    }
+}
+
+@section scripts{
+
+}

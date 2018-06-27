@@ -1,0 +1,45 @@
+﻿@model SepehrsBlog.ViewModels.LoginViewModel
+@{
+    ViewBag.Title = "Login";
+}
+
+@section navLinks
+{
+    <a href="@Url.Action("Register", "User")" class="navbarlink">Register</a>
+}
+
+
+<div class="msg" id="errorBox">
+    <div class="msg-title">Error<img style="float:right" src="~/Content/Images/xmark.png" /></div>
+    <div class="msg-body" id="errorText">
+        @Html.ValidationSummary(false)
+    </div>
+</div>
+
+<div class="msg" id="loginBox">
+    <div class="msg-title">Log in<img style="float:right" src="~/Content/Images/xmark.png" /></div>
+    <div class="msg-body">
+        @using (Html.BeginForm("Login", "User"))
+            {
+            @Html.LabelFor(x => x.Username, "Username: ", new { @class = "windowsLabel" })
+            @Html.EditorFor(x => x.Username, new { @class = "windows" })
+
+            <br>
+
+            @Html.LabelFor(x => x.Password, "Password: ", new { @class = "windowsLabel" })
+            @Html.PasswordFor(x => x.Password, new { @class = "windows" })
+
+            <br>
+
+            <input type="submit" value="Login" class="windowsbutton" />
+        }
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        if ($(".validation-summary-errors").length) {
+            $("#errorBox").show();
+        }
+    </script>
+}

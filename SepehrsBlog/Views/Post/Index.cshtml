@@ -1,0 +1,64 @@
+﻿@model SepehrsBlog.ViewModels.PostViewModel
+
+@{
+    ViewBag.Title = Model.Post.Title;
+}
+
+@section navLinks
+{
+    <a href="@Url.Action("Index", "Home", Model)" class="navbarlink">Back to home</a><br />
+}
+
+<div class="row">
+    <div class="msg">
+        <div class="msg-title"><img style="float:left; margin-right:5px" src="~/Content/Images/notepad.png" /><a style="float:left">@(Model.Post.Title + " by " + Model.Poster)</a><a href=@Url.Action("RemovePost",new {postId = Model.Post.PostId})><img style="float:right" src="~/Content/Images/xmark.png" /></a></div>
+        <div class="msg-body">@Model.Post.Content<br /><br /><a class="date">Posted @Model.Post.Date.ToLocalTime().ToString("yyyy-MM-dd HH:mm")</a></div>
+    </div>
+</div>
+<div class="row">
+    <div class="msg">
+        <div class="msg-title">Leave a comment<img style="float:right" src="~/Content/Images/xmark.png" /></div>
+        <div class="msg-body">
+            @using (Html.BeginForm("SaveComment", "Post"))
+            {
+                @Html.HiddenFor(x => x.Post.PostId)
+
+                @Html.LabelFor(x => x.NewComment.Title, "Title: ", new { @class = "windowsLabel" });
+                @Html.EditorFor(x => x.NewComment.Title, new { @class = "windows", @id = "commentName" });
+                <br />
+                @Html.LabelFor(x => x.NewComment.Content, "Comment: ", new { @class = "windowsLabel" });
+                @Html.TextAreaFor(x => x.NewComment.Content, new { @class = "bigwindows", @rows = 3, @columns = 35, @id = "commentBody" });
+                <br />
+                <input type="submit" class="windowsbutton" id="postButton" />
+            }
+        </div>
+    </div>
+</div>
+
+@if (Model.Comments.Count != 0)
+{
+    foreach (var comment in Model.Comments)
+    {
+        <div class="row">
+            <div class="msg">
+                <div class="msg-title"><img style="float:left; margin-right:5px" src="~/Content/Images/notepad.png" /><a style="float:left">@comment.Title by @comment.Name</a><a href=@Url.Action("RemoveComment",new {commentId = comment.CommentId})><img style="float:right" src="~/Content/Images/xmark.png" /></a></div>
+                <div class="msg-body">@comment.Content<br /><br /><a class="date">Posted @comment.Date.ToLocalTime().ToString("yyyy-MM-dd HH:mm")</a></div>
+            </div>
+        </div>
+    }
+}
+
+else
+{
+    <div class="row">
+        <div class="msg" id="noComments">
+            <div class="msg-title"><img style="float:left; margin-right:5px" src="~/Content/Images/notepad.png" /><a style="float:left"></a><img style="float:right" src="~/Content/Images/xmark.png" /></div>
+            <div class="msg-body">No comments to display</div>
+        </div>
+    </div>
+}
+
+<div id="newCommentSection" style="margin:0;padding:0"></div>
+
+@section scripts{
+}

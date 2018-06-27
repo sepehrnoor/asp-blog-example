@@ -1,0 +1,29 @@
+﻿@model SepehrsBlog.Models.Post
+@{
+    ViewBag.Title = "New post";
+}
+
+@section navLinks
+{
+    <a href="@Url.Action("Index", "Home", Model)" class="navbarlink">Back to home</a><br />
+}
+
+<div class="msg">
+    <div class="msg-title">New post<img style="float:right" src="~/Content/Images/xmark.png" /></div>
+    <div class="msg-body">
+        @using (Html.BeginForm("SavePost", "Post"))
+        {
+            @Html.LabelFor(x => x.Title, "Post title: ", new { @class = "windowsLabel" })
+            @Html.EditorFor(x => x.Title, new { @class = "windows" })
+            <br />
+            @Html.LabelFor(x => x.Content, "Post text: ", new { @class = "windowsLabel" })
+            @Html.TextAreaFor(x => x.Content, new { @class = "bigwindows", @rows = 3, @columns = 30 })
+            <br />
+            <input type="submit" class="windowsbutton" value="Save post" />
+        }
+    </div>
+</div>
+
+
+
+
